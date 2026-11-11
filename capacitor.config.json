@@ -1,0 +1,15 @@
+{
+  "appId": "com.burlington.darkskies",
+  "appName": "Burlington Dark Skies",
+  "webDir": "dist",
+  "backgroundColor": "#080B11",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
+}

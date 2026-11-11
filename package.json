@@ -1,0 +1,22 @@
+{
+  "name": "burlington-dark-skies",
+  "version": "1.0.0",
+  "description": "Burlington, NC Clear Dark Sky & Celestron NexStar 8SE Observatory Suite (Samsung One UI 9 Astral Dark)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.0"
+  }
+}

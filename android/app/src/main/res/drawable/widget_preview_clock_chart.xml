@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="160dp"
+    android:viewportWidth="320"
+    android:viewportHeight="160">
+    <!-- Astral Card Background -->
+    <path
+        android:fillColor="#080D18"
+        android:strokeColor="#283B57"
+        android:strokeWidth="2"
+        android:pathData="M20,4 L300,4 A16,16 0 0,1 316,20 L316,140 A16,16 0 0,1 300,156 L20,156 A16,16 0 0,1 4,140 L4,20 A16,16 0 0,1 20,4 Z" />
+    <!-- Digital Clock Representation Bars & Clear Sky Matrix Preview -->
+    <path android:fillColor="#00E5FF" android:pathData="M220,18 L298,18 A8,8 0 0,1 306,26 L306,36 A8,8 0 0,1 298,44 L220,44 A8,8 0 0,1 212,36 L212,26 A8,8 0 0,1 220,18 Z" android:fillAlpha="0.22"/>
+    <!-- 48h Clear Sky Chart Strips -->
+    <path android:fillColor="#003E7E" android:pathData="M48,68 h150 v12 h-150 z" />
+    <path android:fillColor="#2C6CAC" android:pathData="M200,68 h60 v12 h-60 z" />
+    <path android:fillColor="#003E7E" android:pathData="M262,68 h40 v12 h-40 z" />
+
+    <path android:fillColor="#2C6CAC" android:pathData="M48,84 h180 v12 h-180 z" />
+    <path android:fillColor="#63A3E3" android:pathData="M230,84 h32 v12 h-32 z" />
+    <path android:fillColor="#003E7E" android:pathData="M264,84 h38 v12 h-38 z" />
+
+    <path android:fillColor="#003E7E" android:pathData="M48,100 h254 v12 h-254 z" />
+
+    <path android:fillColor="#FDE68A" android:pathData="M48,116 h36 v12 h-36 z" />
+    <path android:fillColor="#040A1E" android:pathData="M86,116 h92 v12 h-92 z" />
+    <path android:fillColor="#FDE68A" android:pathData="M180,116 h52 v12 h-52 z" />
+    <path android:fillColor="#040A1E" android:pathData="M234,116 h68 v12 h-68 z" />
+
+    <path android:fillColor="#0096C7" android:pathData="M48,132 h254 v12 h-254 z" />
+</vector>

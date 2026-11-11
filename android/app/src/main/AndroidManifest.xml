@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature
+        android:name="android.software.live_wallpaper"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.app_widgets"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBarLaunch"
+            android:launchMode="singleTask"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
+        </activity>
+
+        <!-- Zero-UI Native Android Launcher Shortcut Dispatcher -->
+        <activity
+            android:name=".NativeSkyShortcutActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:exported="true" />
+
+        <!-- Native Lock Screen Wallpaper Settings Activity -->
+        <activity
+            android:name=".LockWallpaperSettingsActivity"
+            android:label="Lock Screen Sky Settings"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true" />
+
+        <!-- 1. Native Android Home Screen Widget: Digital Clock + 48h Clear Sky Chart -->
+        <receiver
+            android:name=".ClearSkyHomeWidgetProvider"
+            android:label="@string/widget_home_label"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.burlington.darkskies.ACTION_REFRESH_HOME_WIDGET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clear_sky_home_widget_info" />
+        </receiver>
+
+        <!-- 2. Compact 48h Clear Sky Chart Widget (Home Screen & Keyguard Lock Widget) -->
+        <receiver
+            android:name=".ClearSkyLockWidgetProvider"
+            android:label="@string/widget_lock_label"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.burlington.darkskies.ACTION_REFRESH_LOCK_WIDGET" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clear_sky_lock_widget_info" />
+        </receiver>
+
+        <!-- 3. Native Android Lock Screen Live Wallpaper: Digital Clock + 48h Clear Sky Chart -->
+        <service
+            android:name=".ClearSkyLockWallpaperService"
+            android:label="@string/wallpaper_lock_label"
+            android:permission="android.permission.BIND_WALLPAPER"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/clear_sky_lock_wallpaper" />
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+</manifest>

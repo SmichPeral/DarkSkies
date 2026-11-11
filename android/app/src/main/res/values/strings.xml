@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Burlington Dark Skies</string>
+    <string name="title_activity_main">Burlington Dark Skies</string>
+    <string name="package_name">com.burlington.darkskies</string>
+    <string name="custom_url_scheme">com.burlington.darkskies</string>
+    <string name="widget_home_label">48h Clear Sky &amp; Digital Clock</string>
+    <string name="widget_home_description">Live digital clock and 48-hour Clear Sky Chart for Burlington, NC.</string>
+    <string name="widget_lock_label">24h Clear Sky Chart (Compact / Lock)</string>
+    <string name="widget_lock_description">Compact 24-hour Clear Sky Chart strip with larger time markers for Lock Screen or Home Screen.</string>
+    <string name="wallpaper_lock_label">Burlington Clear Sky Lock Screen</string>
+    <string name="wallpaper_lock_description">Live OLED Lock Screen with a 24-hour Burlington Clear Sky Chart positioned beneath your system clock.</string>
+    <string name="shortcut_pin_widget_short">Pin Sky Widget</string>
+    <string name="shortcut_pin_widget_long">Pin Clock + 48h Sky Widget</string>
+    <string name="shortcut_lock_screen_short">Set Lock Screen</string>
+    <string name="shortcut_lock_screen_long">Set 48h Sky Lock Screen</string>
+</resources>

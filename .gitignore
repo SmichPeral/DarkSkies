@@ -1,0 +1,16 @@
+# Dependencies & build outputs
+node_modules/
+dist/
+.vite/
+
+# Local / duplicate backup files
+*Copy*.apk
+*.tmp
+*.bak
+*.log
+
+# OS & Editor metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
